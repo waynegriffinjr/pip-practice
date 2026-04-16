@@ -20,8 +20,9 @@ except ValueError:
      print("Sorry, invalid number entered--using 0 instead.")
      num3 = 0
      
-     
+ # Calculate the sum of all three input numbers    
 add3 = num1 + num2 + num3
+# Calculate the average by diving the sum by the number of inputs
 average = add3 / 3 
     
 print(f"Your numbers: {num1}, {num2}, {num3}")
