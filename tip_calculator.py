@@ -5,8 +5,20 @@ print("    Tip Calculator")
 print("=" * 35)
 
 # Get the bill amount (input returns a string, so I need to conert to a float data type)
-bill_string = input("\nEnter the bill amount: $")
-bill = float(bill_string)
+  # Add error handling to prevent program crash
+try:
+    bill_string = input("\nEnter the bill amount: $")
+    bill = float(bill_string)
+    if bill < 0:
+            print("Error: Bill amount can't be negative.")
+            exit()
+    if bill == 0:
+            print("You don't owe anything!")
+            exit()
+except ValueError:
+    print("Please enter a valid number.")
+    exit()           
+
 
 # Calculate tip amounts for common percentages
 # Percentage of total amount
@@ -19,6 +31,19 @@ total_15 = bill + tip_15_per
 total_18 = bill + tip_18_per
 total_20 = bill + tip_20_per
 total_25 = bill + tip_25_per
+
+# Add error handling for tip percentages
+try:
+    tip_rate = float(input("Enter tip percentage (e.g., 20): "))
+    if tip_rate < 0:
+        print("Error: Tip percentage can't be negative")
+        exit()
+    if tip_rate > 100:
+        print(f"Wow, {tip_rate:.0f}% is very generous!")
+        # Graceful comment to ensure this was a logical choice
+except ValueError:
+    print("Error: Please enter a valid number.")
+    exit()
 
 # Ask about splitting
 people_string = input("How many people are splitting the bill? ")
