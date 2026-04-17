@@ -52,7 +52,8 @@ sorted_scores = sorted(scores)    #sorted() returns a new sorted list
 print(f"\nScores (sorted): {sorted_scores}")
 
 # Find median
-mid = len(sorted_scores) // 2       # // is integer division (no decimal)
+mid = len(sorted_scores) // 2       # = 3 // is integer division (no decimal)
+
 if len(sorted_scores) % 2 == 0:     # Even number of scores
     median = (sorted_scores[mid - 1] + sorted_scores[mid]) / 2
 else:
